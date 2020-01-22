@@ -3,7 +3,7 @@ public with sharing class BeerController {
 
     }
 
-    @AuraEnabled
+    @AuraEnabled(cachable=true)
     public static List<sObject> searchBeer(String searchParam){
 
         try {
