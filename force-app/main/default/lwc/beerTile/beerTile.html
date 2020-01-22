@@ -1,4 +1,5 @@
 <template>
+    <template if:true={beerRecord}>
     <lightning-card title={beerRecord.Name} icon-name="custom:custom56">
        <div class="slds-m-around_small">
         <img src={beerRecord.Image__c} width="300" height="150"/>
@@ -14,4 +15,5 @@
         </p>
     </div>
     </lightning-card>
+</template>
 </template>
