@@ -14,8 +14,9 @@ public with sharing class BeerController {
             else {
              queryString='Select id,Name,brewery_id__c,brewery_Name__c,Consumed_Quantity__c,Image__c,Price__c,Remaining_Quantity__c,Tags__c,Total_Quantity__c,Alcohol__c from Beer__c where Name limit 50';  
             }
-        
+        System.debug('query:'+queryString);
         List<sObject> lstSObjects=Database.query(queryString);
+        System.debug('lstSObjects:'+lstSObjects);
         return lstSObjects;
         } 
         catch (Exception ex) {

@@ -1,3 +1,3 @@
 <aura:application>
-<c:beerList/>
+<!--<c:beerList/>-->
 </aura:application>	
