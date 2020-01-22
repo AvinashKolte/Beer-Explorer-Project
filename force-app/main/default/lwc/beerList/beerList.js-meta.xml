@@ -4,8 +4,8 @@
     <isExposed>true</isExposed>
     <masterLabel>Beer Explorer App</masterLabel>
     <targets>
-    <target>Lightning__AppPage</target>
-    <target>Lightning__HomePage</target>
-    <target>Lightning__RecordPage</target>
+    <target>Lightning__Apppage</target>
+    <target>Lightning__Homepage</target>
+    <target>Lightning__Recordpage</target>
     </targets>
 </LightningComponentBundle>
