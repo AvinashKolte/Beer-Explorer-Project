@@ -8,6 +8,6 @@ export default class BeerSearch extends LightningElement {
     {
         const value=event.target.value;
 
-        this.dispatchEvent(new CustomEvent("search",{"detail":value}));
+        this.dispatchEvent(new CustomEvent("search",{detail:value}));
     }
 }
