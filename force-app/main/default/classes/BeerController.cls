@@ -9,10 +9,10 @@ public with sharing class BeerController {
         try {
             String likeName='%'+ searchParam+'%';
             String queryString='';
-            if(searchParam!=null)
+            if(searchParam!=null && searchParam!='')
             queryString='Select id,Name,brewery_id__c,brewery_Name__c,Consumed_Quantity__c,Image__c,Price__c,Remaining_Quantity__c,Tags__c,Total_Quantity__c,Alcohol__c from Beer__c where Name like:likeName limit 50';
             else {
-             queryString='Select id,Name,brewery_id__c,brewery_Name__c,Consumed_Quantity__c,Image__c,Price__c,Remaining_Quantity__c,Tags__c,Total_Quantity__c,Alcohol__c from Beer__c where Name limit 50';  
+             queryString='Select id,Name,brewery_id__c,brewery_Name__c,Consumed_Quantity__c,Image__c,Price__c,Remaining_Quantity__c,Tags__c,Total_Quantity__c,Alcohol__c from Beer__c  limit 50';  
             }
         System.debug('query:'+queryString);
         List<sObject> lstSObjects=Database.query(queryString);

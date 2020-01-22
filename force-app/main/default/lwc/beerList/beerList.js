@@ -9,13 +9,21 @@ export default class BeerList extends LightningElement {
     errors;
 
     @wire(beerSearch)
-      configureBeerSearch({error,data}){
+      wiredBeerRecords({error,data}){
           console.log("inside wire method of beerSearch:-->");
           console.log("data:"+data);
           console.log("error:"+error);
-          this.beerRecords=data;
-          this.errors=error;
-      }
+            if(data)
+            {
+            this.beerRecords=data;
+            this.error=undefined;
+             }
+            else if(error)
+            {
+            this.errors=error;
+                this.beerRecords=undefined;
+         }
+        }
     handleEvent(event)
     {
         const eventVal=event.detail;

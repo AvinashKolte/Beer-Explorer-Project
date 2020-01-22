@@ -1,3 +1,3 @@
-<aura:application>
-<!--<c:beerList/>-->
+<aura:application extends="force:slds">
+<c:beerList/>
 </aura:application>	
