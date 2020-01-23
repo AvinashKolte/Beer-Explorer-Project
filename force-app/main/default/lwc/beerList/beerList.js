@@ -1,13 +1,34 @@
 /* eslint-disable no-console */
 import { LightningElement, track,wire } from 'lwc';
 import beerSearch from '@salesforce/apex/BeerController.searchBeer';
+import getCartId from '@salesforce/apex/BeerController.getCartId';
+import cartIco from '@salesforce/resourceUrl/cart';
 export default class BeerList extends LightningElement {
 
     @track
     beerRecords;
     @track 
     errors;
+    @track
+    cart=cartIco;
+    @track
+    cartId;
 
+    connectedCallback()
+    {
+        this.defaultCardId();
+    }
+
+    defaultCardId(){
+        getCartId()
+        .then(result=>{
+            console.log("cart Id:->"+result);
+            this.cartId=result;
+        })
+        .catch(error=>{
+            console.log("inside error-->"+error);
+        })
+    }
     @wire(beerSearch)
       wiredBeerRecords({error,data}){
           console.log("inside wire method of beerSearch:-->");
